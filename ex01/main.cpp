@@ -26,11 +26,5 @@ int main()
     l->makeSound();
     beta->makeSound();
 
-    delete meta;
-    delete i;
-    delete j;
-    delete beta;
-    delete l;
-
     return 0;
 }
