@@ -4,6 +4,7 @@
 
 #include "Animal.h"
 
+
 Animal::Animal() : m_type("undefined")
 {
     std::cout << "Animal constructor called" << std::endl;

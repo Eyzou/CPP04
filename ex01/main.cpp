@@ -4,27 +4,52 @@
 #include "Animal.h"
 #include "Dog.h"
 #include "Cat.h"
-#include "WrongAnimal.h"
-#include "WrongCat.h"
+#include "Brain.h"
+#include "stdio.h"
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << meta->getType() << " " << std::endl;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-    std::cout << std::endl;
-    const WrongAnimal* beta = new WrongAnimal();
-    const WrongAnimal* l = new WrongCat();
-    std::cout << l->getType() << " " << std::endl;
-    l->makeSound();
-    beta->makeSound();
+	delete j;//should not create a leak
+	delete i;
+	std::cout << std::endl;
+	
+	std::cout << "Other testing" << std::endl;
 
-    return 0;
+	const Animal *animal_array[4];
+
+	std::cout << std::endl;
+	for (int i = 0; i < 2; i++)
+		animal_array[i] = new Dog();
+	std::cout << std::endl;
+	for (int i = 2; i < 4; i++)
+		animal_array[i] = new Cat();
+	std::cout << std::endl;
+	for (int i = 0; i < 4; i++)
+		delete animal_array[i];
+	std::cout << std::endl;
+
+	std::cout << "Other testing testing deep copy" << std::endl;
+
+	std::cout << std::endl;
+	Dog *a = new Dog();
+	printf("%p\n", (void*)a);
+
+	a->setIdea("Happy", 1);
+	a->setIdea("Sad", 2);
+	a->setIdea("Joy", 3);
+	a->setIdea("Dead", 4);
+	std::cout << "Other testing testing deep copy" << std::endl;
+	std::cout << "The " << a->getType() << " has the following ideas" << std::endl;
+	a->getIdeas();
+	std::cout << std::endl;
+	Dog *b = new Dog(*a);
+
+	std::cout << "The " << b->getType() << " has the following ideas" << std::endl;
+	b->getIdeas();
+	delete b;
+	
+	return 0;
 }

@@ -16,10 +16,11 @@ class Brain {
         ~Brain();
         Brain const &operator=(Brain const &rhs);
 
-		std::string const &getIdeas() const;
+		std::string const getIdea(int i) const;
+		void setIdea(std::string idea, int i);
 
     private:
-        std::string *m_ideas;
+        std::string 	m_ideas[100];
 };
 
 

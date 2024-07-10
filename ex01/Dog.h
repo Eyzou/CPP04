@@ -19,14 +19,14 @@ class Dog : public Animal {
 
 		virtual std::string const &getType() const;
 		void setType(std::string const &type);
+		void getIdeas() const;
+		void setIdea(std::string idea, int i);
 
 		virtual void makeSound() const;
 
 	private:
 		std::string m_type;
-		Brain *brain;
+		Brain *m_brain;
 };
-
-
 
 #endif //DOG_H

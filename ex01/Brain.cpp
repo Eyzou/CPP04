@@ -6,12 +6,8 @@
 
 Brain::Brain()
 {
-	this->m_ideas = new std::string[100];
-	for (int i; i < 100; i++)
-		m_ideas[i] = "Brain is full of ideas";
     std::cout << "Default Brain constructor called" << std::endl;
 }
-
 
 Brain::Brain(const Brain &copy)
 {
@@ -27,12 +23,25 @@ Brain::~Brain()
 Brain const &Brain::operator=(Brain const &rhs)
 {
     std::cout << "Brain copy assignment called" << std::endl;
-	this->m_ideas = rhs.getIdeas();
+	if(this != &rhs)
+	{
+		for (int i = 0 ; i < 100 ; i++)
+			this->m_ideas[i]  = rhs.m_ideas[i];
+	}
     return *this;
 }
 
-std::string const &Brain::getIdeas() const
+std::string const Brain::getIdea(int i) const
 {
-    return this->m_ideas;
+	if(i < 0 || i > 99)
+		return("");
+    return this->m_ideas[i];
 }
 
+void Brain::setIdea(std::string idea, int i)
+{
+	if (i < 100 && i >= 0)
+		this->m_ideas[i] = idea;
+	else
+		std::cout << "There is only 100 ideas" << std::endl;
+}

@@ -9,7 +9,7 @@ Cat::Cat() : m_type("Cat")
     std::cout << "Default Cat constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &copy) : Animal()
+Cat::Cat(const Cat &copy) : Animal(copy)
 {
     *this = copy;
     std::cout << "Cat copy constructor called" << std::endl;
