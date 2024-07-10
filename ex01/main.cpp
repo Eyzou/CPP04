@@ -35,21 +35,32 @@ int main()
 
 	std::cout << std::endl;
 	Dog *a = new Dog();
-	printf("%p\n", (void*)a);
 
 	a->setIdea("Happy", 1);
 	a->setIdea("Sad", 2);
 	a->setIdea("Joy", 3);
 	a->setIdea("Dead", 4);
-	std::cout << "Other testing testing deep copy" << std::endl;
+
 	std::cout << "The " << a->getType() << " has the following ideas" << std::endl;
 	a->getIdeas();
 	std::cout << std::endl;
+	std::cout << "Construction of Dog *b = new Dog(*a): " << std::endl;
+	std::cout << std::endl;
 	Dog *b = new Dog(*a);
-
+	std::cout << std::endl;
+	std::cout << "Test copy assignment to see if deep copy:" << std::endl;
 	std::cout << "The " << b->getType() << " has the following ideas" << std::endl;
+	b->setIdea("will do pipi", 5);
+	b->getIdeas();
+	std::cout << "and the new tdea is not present in brain of a below:" << std::endl;
+	std::cout << std::endl;
+	b->setIdea("kikoo je ne suis pas print dans a", 7);
+	std::cout << std::endl;
+	a->getIdeas();
+	std::cout << std::endl;
 	b->getIdeas();
 	delete b;
+	delete a;
 	
 	return 0;
 }

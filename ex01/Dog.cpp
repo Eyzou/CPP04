@@ -7,12 +7,14 @@
 
 Dog::Dog(): Animal(), m_type("Dog")
 {
+	this->m_brain = new Brain;
     std::cout << "Dog constructor called, with new brain." << std::endl;
 }
 
 Dog::Dog(Dog const &copy) : Animal(copy)
 {
-    *this = copy;
+    this->m_type = copy.m_type;
+    this->m_brain = new Brain(*copy.m_brain);
     std::cout << "Dog copy constructor called, with new brain." << std::endl;
 }
 
@@ -26,6 +28,7 @@ Dog const &Dog::operator=(Dog const &rhs)
 {
 	if(this != &rhs)
 	{
+		printf("%p\n", this->m_brain);
 		if(this->m_brain)
 			delete this->m_brain;
 		this->m_type = rhs.getType();
@@ -52,14 +55,11 @@ void Dog::makeSound() const
 
 void Dog::setIdea(std::string idea, int i)
 {
-	printf("%p\n", this->m_brain);
-	std::cout << idea << std::endl;
-	std::cout << i << std::endl;
 	this->m_brain->setIdea(idea,i);
 }
 
 void Dog::getIdeas() const
 {
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 10; i++)
 		std::cout << "Idea : " << i << " of the Dog is :" << this->m_brain->getIdea(i) << std::endl;
 }

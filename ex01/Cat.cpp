@@ -12,7 +12,8 @@ Cat::Cat() : Animal() , m_type("Cat")
 
 Cat::Cat(const Cat &copy) : Animal(copy)
 {
-	*this = copy;
+	this->m_type = copy.m_type;
+	this->m_brain = new Brain(*copy.m_brain);
     std::cout << "Cat copy constructor called, with new brain." << std::endl;
 }
 
@@ -55,6 +56,6 @@ void Cat::setIdea(std::string idea, int i)
 }
 void Cat::getIdeas() const
 {
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 10; i++)
 		std::cout << "Idea : " << i << "of the Cat is :" << this->m_brain->getIdea(i) << std::endl;
 }
