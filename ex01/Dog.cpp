@@ -6,6 +6,7 @@
 
 Dog::Dog(): m_type("Dog")
 {
+	this->brain = new Brain;
     std::cout << "Default Dog constructor called" << std::endl;
 }
 
@@ -17,6 +18,7 @@ Dog::Dog(Dog const &copy) : Animal(copy)
 
 Dog::~Dog()
 {
+	delete [] this->brain;
     std::cout << "Dog destructor called" << std::endl;
 }
 

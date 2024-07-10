@@ -7,6 +7,7 @@
 
 #include <string>
 #include "Animal.h"
+#include "Brain.h"
 
 class Cat : public Animal {
 
@@ -18,11 +19,12 @@ class Cat : public Animal {
 
         virtual std::string const &getType() const;
         void setType(std::string const &type);
+
         virtual void makeSound() const;
 
-    protected:
+    private:
         std::string m_type;
-
+		Brain *brain;
 };
 
 

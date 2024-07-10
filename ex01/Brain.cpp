@@ -6,15 +6,14 @@
 
 Brain::Brain()
 {
+	this->m_ideas = new std::string[100];
+	for (int i; i < 100; i++)
+		m_ideas[i] = "Brain is full of ideas";
     std::cout << "Default Brain constructor called" << std::endl;
 }
 
-Brain::Brain(std::string *ideas) : m_ideas(ideas)
-{
-    std::cout << "Array Brain constructor called" << std::endl;
-}
 
-Brain::Brain(const Brain &copy) :
+Brain::Brain(const Brain &copy)
 {
     *this = copy;
     std::cout << "Brain copy constructor called" << std::endl;
@@ -28,20 +27,12 @@ Brain::~Brain()
 Brain const &Brain::operator=(Brain const &rhs)
 {
     std::cout << "Brain copy assignment called" << std::endl;
-    Animal::operator=(rhs);
+	this->m_ideas = rhs.getIdeas();
     return *this;
 }
-std::string const &Brain::getType() const
+
+std::string const &Brain::getIdeas() const
 {
-    return this->m_type;
+    return this->m_ideas;
 }
 
-void Brain::setType(std::string const &type)
-{
-    this->m_type = type;
-}
-
-void Brain::makeSound() const
-{
-    std::cout << "MIAOU" << std::endl;
-}

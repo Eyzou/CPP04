@@ -11,11 +11,12 @@
 class Brain {
 
     public:
-         Brain();
-         Brain(std::string *ideas);
-         Brain(Brain const &copy);
-         ~Brain();
-         Brain const &operator=(Brain const &rhs);
+        Brain();
+        Brain(Brain const &copy);
+        ~Brain();
+        Brain const &operator=(Brain const &rhs);
+
+		std::string const &getIdeas() const;
 
     private:
         std::string *m_ideas;
