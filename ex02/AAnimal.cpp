@@ -2,38 +2,38 @@
 // Created by eyza on 09/07/24.
 //
 
-#include "A_Animal.h"
+#include "AAnimal.h"
 
-A_Animal::A_Animal() : m_type("undefined A_Animal")
+AAnimal::AAnimal() : m_type("undefined AAnimal")
 {
-    std::cout << "A_Animal constructor called" << std::endl;
+    std::cout << "AAnimal constructor called" << std::endl;
 }
 
-A_Animal::A_Animal(A_Animal const &copy)
+AAnimal::AAnimal(AAnimal const &copy)
 {
     *this = copy;
-    std::cout << "A_Animal copy constructor called" << std::endl;
+    std::cout << "AAnimal copy constructor called" << std::endl;
 }
 
-A_Animal::~A_Animal()
+AAnimal::~AAnimal()
 {
-    std::cout << "A_Animal destructor called" << std::endl;
+    std::cout << "AAnimal destructor called" << std::endl;
 }
 
-A_Animal const &A_Animal::operator=(A_Animal const &rhs)
+AAnimal const &AAnimal::operator=(AAnimal const &rhs)
 {
-    std::cout << "A_Animal copy assignment called" << std::endl;
+    std::cout << "AAnimal copy assignment called" << std::endl;
     if (this != &rhs)
         this->m_type = rhs.getType();
     return *this;
 }
 
-std::string const &A_Animal::getType() const
+std::string const &AAnimal::getType() const
 {
     return m_type;
 }
 
-void A_Animal::makeSound() const
+void AAnimal::makeSound() const
 {
-    std::cout << "An A_Animal " << this->m_type << " made a sound!" << std::endl;
+    std::cout << "An AAnimal " << this->m_type << " made a sound!" << std::endl;
 }

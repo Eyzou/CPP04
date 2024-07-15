@@ -6,10 +6,10 @@
 #define CAT_H
 
 #include <string>
-#include "A_Animal.h"
+#include "AAnimal.h"
 #include "Brain.h"
 
-class Cat : public A_Animal {
+class Cat : public AAnimal {
 
     public:
         Cat();

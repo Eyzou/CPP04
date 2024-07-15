@@ -5,13 +5,13 @@
 #include "Dog.h"
 
 
-Dog::Dog(): A_Animal(), m_type("Dog")
+Dog::Dog(): AAnimal(), m_type("Dog")
 {
 	this->m_brain = new Brain;
     std::cout << "Dog constructor called, with new brain." << std::endl;
 }
 
-Dog::Dog(Dog const &copy) : A_Animal(copy)
+Dog::Dog(Dog const &copy) : AAnimal(copy)
 {
     this->m_type = copy.m_type;
     this->m_brain = new Brain(*copy.m_brain);

@@ -27,7 +27,6 @@ Ice &Ice::operator=(const Ice &rhs)
     return *this;
 }
 
-//comme la mere a cette fonction dois-je la mettre ici ?
 AMateria* Ice::clone() const
 {
     std::cout << "Cloning a materia of type : " << m_type << std::endl;
@@ -36,5 +35,5 @@ AMateria* Ice::clone() const
 
 void Ice::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::ends;
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

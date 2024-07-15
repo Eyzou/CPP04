@@ -4,7 +4,7 @@
 
 #include "Cure.h"
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
     std::cout << "Constructor of a Materia of type: " << m_type << std::endl;
 }
@@ -27,7 +27,6 @@ Cure &Cure::operator=(const Cure &rhs)
     return *this;
 }
 
-//comme la mere a cette fonction dois-je la mettre ici ?
 AMateria* Cure::clone() const
 {
     std::cout << "Cloning a materia of type : " << m_type << std::endl;
@@ -36,5 +35,5 @@ AMateria* Cure::clone() const
 
 void Cure::use(ICharacter& target)
 {
-    std::cout << "* heals " << target.getName() <<"'s wounds"<< std::ends;
+    std::cout << "* heals " << target.getName() <<"'s wounds *"<< std::endl;
 }

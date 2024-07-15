@@ -4,13 +4,13 @@
 
 #include "Cat.h"
 
-Cat::Cat() : A_Animal() , m_type("Cat")
+Cat::Cat() : AAnimal() , m_type("Cat")
 {
 	this->m_brain = new Brain;
     std::cout << "Cat constructor called, with new brain." << std::endl;
 }
 
-Cat::Cat(const Cat &copy) : A_Animal(copy)
+Cat::Cat(const Cat &copy) : AAnimal(copy)
 {
 	this->m_type = copy.m_type;
 	this->m_brain = new Brain(*copy.m_brain);

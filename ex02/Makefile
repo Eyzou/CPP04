@@ -3,7 +3,7 @@ CC = c++
 CFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp \
-	A_Animal.cpp \
+	AAnimal.cpp \
 	Dog.cpp \
 	Cat.cpp\
 	Brain.cpp

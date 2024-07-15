@@ -52,19 +52,20 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+    if(!m)
+    {
+        std::cout << "Attempted to equip a null Materia." << std::endl;
+        return;
+    }
     for(int i = 0; i < m_invSize ; i++)
     {
         if (this->m_inventory[i] == NULL)
         {
             this->m_inventory[i] = m;
-            std::cout << "Materia" << this->m_inventory[i]->getType() << "added to inventory" << std::endl;
+            std::cout << "Materia of type " << this->m_inventory[i]->getType() << " added to inventory" << std::endl;
             return;
         }
     }
-    if(m)
-        //to delete m
-        std::cout << "The inventory is full of Materias" << std::endl;
-    else
         std::cout << "This materia does not exist" << std::endl;
 }
 
@@ -79,5 +80,5 @@ void Character::use(int idx, ICharacter& target)
 {
     for(int i = 0; i < m_invSize ; i++)
         if(i == idx && this->m_inventory[idx] != NULL)
-            std::cout << m_name << "use the materia of type : " << m_inventory[idx]->getType() << "on" << target.getName() << std::ends;
+            this->m_inventory[idx]->use(target);
 }

@@ -2,19 +2,19 @@
 // Created by eyza on 09/07/24.
 //
 
-#ifndef A_ANIMAL_H
-#define A_ANIMAL_H
+#ifndef AANIMAL_H
+#define AANIMAL_H
 
 #include <string>
 #include <iostream>
 
-class A_Animal {
+class AAnimal {
 
     public:
-        A_Animal();
-        A_Animal(const A_Animal &copy);
-        virtual ~A_Animal();
-        A_Animal const &operator=(A_Animal const &rhs);
+        AAnimal();
+        AAnimal(const AAnimal &copy);
+        virtual ~AAnimal();
+        AAnimal const &operator=(AAnimal const &rhs);
 
         virtual void makeSound() const;
         virtual std::string const &getType() const;
@@ -26,4 +26,4 @@ class A_Animal {
 
 
 
-#endif //A_ANIMAL_H
+#endif //AANIMAL_H

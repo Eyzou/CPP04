@@ -3,7 +3,7 @@
 //
 
 #include "Dog.h"
-#include "stdio.h"
+
 
 Dog::Dog(): Animal(), m_type("Dog")
 {
@@ -28,7 +28,6 @@ Dog const &Dog::operator=(Dog const &rhs)
 {
 	if(this != &rhs)
 	{
-		printf("%p\n", this->m_brain);
 		if(this->m_brain)
 			delete this->m_brain;
 		this->m_type = rhs.getType();

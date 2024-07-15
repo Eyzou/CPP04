@@ -41,5 +41,5 @@ std::string const &AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-    std::cout << "I am a virtual Materia - you should replace me " << std::endl;
+    std::cout << "I am a virtual Materia - you should replace me - name : "  << target.getName()<< std::endl;
 }

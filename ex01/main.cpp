@@ -5,7 +5,7 @@
 #include "Dog.h"
 #include "Cat.h"
 #include "Brain.h"
-#include "stdio.h"
+
 
 int main()
 {

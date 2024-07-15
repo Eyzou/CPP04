@@ -8,6 +8,8 @@
 #include <iostream>
 #include "ICharacter.h"
 
+//Forward declaration to resolve the fact that the compiler does know about this class.
+class ICharacter;
 
 class AMateria {
 

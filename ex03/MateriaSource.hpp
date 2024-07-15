@@ -5,6 +5,8 @@
 #ifndef MATERIASOURCE_HPP
 #define MATERIASOURCE_HPP
 
+#include <string>
+#include "AMateria.h"
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource
@@ -15,9 +17,12 @@ class MateriaSource : public IMateriaSource
         virtual ~MateriaSource();
         MateriaSource &operator=(MateriaSource const &rhs);
 
-        virtual ~IMateriaSource();
-        virtual void learnMateria(AMateria*) = 0;
-        virtual AMateria* createMateria(std::string const & type) = 0;
-}
+        virtual void learnMateria(AMateria*);
+        virtual AMateria* createMateria(std::string const & type);
+
+	private:
+		static const int m_size = 4;
+		AMateria *m_content[m_size];
+};
 
 #endif //MATERIASOURCE_HPP

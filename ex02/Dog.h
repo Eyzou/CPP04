@@ -6,10 +6,10 @@
 #define DOG_H
 
 #include <string>
-#include "A_Animal.h"
+#include "AAnimal.h"
 #include "Brain.h"
 
-class Dog : public A_Animal {
+class Dog : public AAnimal {
 
 	public:
 		Dog();
