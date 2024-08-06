@@ -5,5 +5,5 @@
 Animal
 
 # Ignore vscode files 
-/.idea
-/.vscode
+/.idea/
+/.vscode/
