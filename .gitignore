@@ -3,3 +3,7 @@
 
 # Ignore executable files (no extension under Linux)
 Animal
+
+# Ignore vscode files 
+/.idea
+/.vscode
