@@ -20,8 +20,7 @@ class Cat : public Animal {
         void setType(std::string const &type);
         virtual void makeSound() const;
 
-    protected:
-        std::string m_type;
+	protected:
 
 };
 

@@ -20,7 +20,7 @@ public:
     virtual void makeSound() const;
 
 protected:
-    std::string m_type;
+
 
 };
 

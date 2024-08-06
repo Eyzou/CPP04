@@ -4,8 +4,9 @@
 
 #include "Dog.h"
 
-Dog::Dog(): m_type("Dog")
+Dog::Dog():  Animal()
 {
+	this->m_type = "Dog";
     std::cout << "Default Dog constructor called" << std::endl;
 }
 

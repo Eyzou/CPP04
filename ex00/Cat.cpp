@@ -4,8 +4,9 @@
 
 #include "Cat.h"
 
-Cat::Cat() : m_type("Cat")
+Cat::Cat() : Animal()
 {
+	this->m_type = "Cat";
     std::cout << "Default Cat constructor called" << std::endl;
 }
 

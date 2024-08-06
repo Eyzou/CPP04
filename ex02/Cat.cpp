@@ -4,8 +4,9 @@
 
 #include "Cat.h"
 
-Cat::Cat() : AAnimal() , m_type("Cat")
+Cat::Cat() : AAnimal()
 {
+	this->m_type = "Cat";
 	this->m_brain = new Brain;
     std::cout << "Cat constructor called, with new brain." << std::endl;
 }

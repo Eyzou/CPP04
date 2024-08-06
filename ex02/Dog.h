@@ -25,7 +25,6 @@ class Dog : public AAnimal {
 		virtual void makeSound() const;
 
 	private:
-		std::string m_type;
 		Brain *m_brain;
 };
 

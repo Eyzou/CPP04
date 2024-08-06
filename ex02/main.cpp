@@ -9,11 +9,12 @@
 
 int main()
 {
-	A_Animal *cat = new Cat();
+	AAnimal *cat = new Cat();
 	cat->makeSound();
 	//const A_Animal zou = new A_Animal();
-	A_Animal *zou = new Dog();
+	AAnimal *zou = new Dog();
 	zou->makeSound();
 	delete cat;
+	delete zou;
 
 }

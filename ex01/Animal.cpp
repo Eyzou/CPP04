@@ -5,9 +5,10 @@
 #include "Animal.h"
 
 
-Animal::Animal() : m_type("undefined")
+Animal::Animal()
 {
     std::cout << "Animal constructor called" << std::endl;
+	this->m_type = "undefined";
 }
 
 Animal::Animal(Animal const &copy)

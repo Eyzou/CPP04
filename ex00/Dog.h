@@ -10,19 +10,18 @@
 
 class Dog : public Animal {
 
-public:
-    Dog();
-    Dog(const Dog &copy);
-    virtual ~Dog();
-    Dog const &operator=(Dog const &rhs);
+	public:
+		Dog();
+		Dog(const Dog &copy);
+		virtual ~Dog();
+		Dog const &operator=(Dog const &rhs);
 
-    virtual std::string const &getType() const;
-    void setType(std::string const &type);
+		virtual std::string const &getType() const;
+		void setType(std::string const &type);
+		virtual void makeSound() const;
 
-    virtual void makeSound() const;
+	protected:
 
-protected:
-    std::string m_type;
 };
 
 

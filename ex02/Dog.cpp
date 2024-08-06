@@ -4,9 +4,9 @@
 
 #include "Dog.h"
 
-
-Dog::Dog(): AAnimal(), m_type("Dog")
+Dog::Dog(): AAnimal()
 {
+	this->m_type = "Dog";
 	this->m_brain = new Brain;
     std::cout << "Dog constructor called, with new brain." << std::endl;
 }
